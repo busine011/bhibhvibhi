@@ -6,6 +6,11 @@ if (!isset($_GET['hash']) && file_exists('links/' . $_GET['hash']))
     header("location: $short_urlx1", true, 200);
     die();
     }
+else if (!file_exists('links/' . $_GET['hash']))
+{
+	header("HTTP/1.0 404 Not Found");
+	exit;
+}
 
     else
     {
